@@ -536,14 +536,3 @@ Citizen.CreateThread(function()
     SetPedComponentVariation(created_ped, 0, 1, 0, 2) -- Ansigt
     SetPedComponentVariation(created_ped, 2, 3, 3, 2) -- Hår
 end)
-
-function vabenanimation()
-end
-
-RegisterCommand("cbt", function()
-    GiveWeaponComponentToPed(GetPlayerPed(-1), GetHashKey("WEAPON_SMG"), GetHashKey("COMPONENT_AT_PI_SUPP"))
-    Citizen.Wait(1)
-    if HasPedGotWeaponComponent(GetPlayerPed(-1), GetHashKey("WEAPON_SMG"), GetHashKey("COMPONENT_AT_PI_SUPP")) then
-        exports['mythic_notify']:SendAlert('success', "Modtog component", 2000)
-    end
-end)
